@@ -67,7 +67,7 @@ def updateOrderStatus():
     data = json.loads(request.data)
     try:
         logger.info("Updating order status")
-        db.orders.update({'_id': data['orderId']}, {'$set': {'order_status': 'Amount Paid'}})
+        db.orders.update({'_id': data['OrderId']}, {'$set': {'order_status': 'Amount Paid'}})
         logger.info("Sunncessfully leaving Orders")
         response = Response(status=200)
     except:
