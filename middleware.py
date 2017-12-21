@@ -16,11 +16,11 @@ def start_timer():
 
 def stop_timer(response):
     resp_time = time.time() - request.start_time
-    REQUEST_LATENCY.labels('frontend', request.path).observe(resp_time)
+    REQUEST_LATENCY.labels('orders', request.path).observe(resp_time)
     return response
 
 def record_request_data(response):
-    REQUEST_COUNT.labels('frontend', request.method, request.path,
+    REQUEST_COUNT.labels('orders', request.method, request.path,
             response.status_code).inc()
     return response
 
