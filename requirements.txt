@@ -5,3 +5,4 @@ Flask-WTF
 requests
 pymongo
 pyjwt
+prometheus_client
